@@ -23,7 +23,6 @@
     const backToTop = document.querySelector('.back-to-top');
 
     window.addEventListener('scroll', function () {
-      console.log('Scroll event fired! scrollY:', window.scrollY);
       if (navbar) {
         if (window.scrollY > 80) {
           navbar.classList.add('sticky');
@@ -184,11 +183,9 @@
     // 4. SCROLL REVEAL EFFECT
     // ==========================================
     const reveals = document.querySelectorAll('.reveal-fade-in');
-    console.log('Found reveal elements count:', reveals.length);
 
     const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
-        console.log('Reveal entry target ID:', entry.target.id, 'Classes:', entry.target.className, 'isIntersecting:', entry.isIntersecting);
         if (entry.isIntersecting) {
           entry.target.classList.add('active');
         }
